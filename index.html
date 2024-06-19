@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Google</title>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+  <div id="g_id_onload"
+      data-client_id="861066227400-p2j3jrc74f40van2u9ujopgrit56r4le.apps.googleusercontent.com"
+      data-login_uri="https://your.domain/your_login_endpoint"
+      data-callback="handleCredentialResponse"
+      data-auto_prompt="false">
+  </div>
+  <div class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"q
+      data-text="sign_in_with"
+      data-shape="rectangular"
+      data-logo_alignment="left">
+  </div>
+    <p id="fullName"></p>
+    <p id="sub"></p>
+    <p id="given_name"></p>
+    <p id="family_name"></p>
+    <p id="email"></p>
+    <p id="verifiedEmail"></p>
+    <img id="picture" />
+  <script>
+    const clientId = process.env.CLIENT_ID;
+    document.getElementById('g_id_onload').setAttribute('data-client_id', clientId);
+  </script>
+  
+</body>
+</html>
